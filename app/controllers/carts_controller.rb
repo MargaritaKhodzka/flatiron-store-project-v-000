@@ -9,7 +9,7 @@ class CartsController < ApplicationController
     if @cart.checkout
       current_user.remove_cart
     end
-    redirect_to cart_path(@cart), :notice => "You have checked out. Here are your purchases:"
+    redirect_to cart_path(@cart)
   end
 
 end
