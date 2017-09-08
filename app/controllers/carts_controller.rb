@@ -6,10 +6,10 @@ class CartsController < ApplicationController
 
   def checkout
     @cart = Cart.find(params[:id])
-    if @cart.checkout
-      current_user.remove_cart
-    end
-    redirect_to cart_path(@cart)
-  end
+     if @cart.checkout
+       current_user.remove_cart
+     end
+     redirect_to cart_path(@cart)
+   end
 
 end

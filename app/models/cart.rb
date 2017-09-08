@@ -4,10 +4,10 @@ class Cart < ActiveRecord::Base
   belongs_to :user
 
   def total
-    totals = self.line_items.map do |line_item|
+    total = self.line_items.map do |line_item|
       line_item.item.price * line_item.quantity
     end
-    totals.sum
+    total.sum
   end
 
   def add_item(item)
